@@ -7,6 +7,8 @@ app.use(express.urlencoded())
 
 app.use(express.static(process.argv[3]||path.join(__dirname, 'public')));
 
+app.use(require('stylus').middleware(__dirname + '/public'));
+
 app.set('view engine', 'jade')
   app.get('/home', function(req, res) {
     res.render(process.argv[3], {date: new Date().toDateString()})

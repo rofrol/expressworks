@@ -28,4 +28,7 @@ app.set('view engine', 'jade')
     console.log("hash: "+hash)
     res.render('hash', {str: hash})
   })
+  app.get('/search', function(req, res) {
+    res.send(req.query)
+  })
 app.listen(app.listen(process.argv[2]))

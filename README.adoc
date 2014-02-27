@@ -1,10 +1,19 @@
 Node.js workshop in Engine Yard
 
 http://www.nodejsdublin.com/
+
 http://nodeschool.io/#expressworks
 
 ----
+npm install -g expressworks@latest
 mkdir node_modules
 npm install express
-etc.
+----
+
+Go through the works shop
+----
+expressworks
+expressworks print
+expressworks run program.js
+expressworks verify program.js
 ----

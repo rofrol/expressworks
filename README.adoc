@@ -1,0 +1,10 @@
+Node.js workshop in Engine Yard
+
+http://www.nodejsdublin.com/
+http://nodeschool.io/#expressworks
+
+----
+mkdir node_modules
+npm install express
+etc.
+----

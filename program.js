@@ -1,6 +1,7 @@
 var express = require('express')
 var path = require('path')
 var jade = require('jade')
+var fs = require('fs')
 var app = express()
 app.set('views', path.join(__dirname, 'templates'))
 app.use(express.urlencoded())
@@ -30,5 +31,12 @@ app.set('view engine', 'jade')
   })
   app.get('/search', function(req, res) {
     res.send(req.query)
+  })
+  app.get('/books', function(req, res) {
+    fs.readFile(process.argv[3], function(err, data){
+      if (err) throw err;
+      o = JSON.parse(data)
+      res.json(o)
+    });
   })
 app.listen(app.listen(process.argv[2]))

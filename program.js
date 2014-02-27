@@ -19,4 +19,13 @@ app.set('view engine', 'jade')
   app.post('/form', function(req, res) {
     res.render('form2', {str: req.body.str.split('').reverse().join('')})
   })
+  app.put('/message/:id', function(req, res) {
+    var id = req.params.id
+    var hash = require('crypto')
+      .createHash('sha1')
+      .update(new Date().toDateString().toString() + id)
+      .digest('hex')
+    console.log("hash: "+hash)
+    res.render('hash', {str: hash})
+  })
 app.listen(app.listen(process.argv[2]))
